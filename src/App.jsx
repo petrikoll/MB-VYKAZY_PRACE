@@ -559,11 +559,8 @@ Výstup jen JSON pole objektů {desc, hours}.`;
           }}
         >
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-            <div className="flex items-center gap-3">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white/15 ring-1 ring-white/25">
-                <FileSpreadsheet size={28} />
-              </span>
-              <div>
+            <div className="flex items-center gap-3 md:pl-[300px] lg:pl-[360px]">
+              <div className="min-w-0">
                 <h1 className="text-[18px] font-bold drop-shadow-sm">Generátor výkazů OPZ+ - Moravský Beroun</h1>
                 <p className="text-[13px] font-medium text-blue-50 drop-shadow-sm">Export tří pracovních výkazů pro tři zaměstnance do XLSX ZIP.</p>
               </div>
