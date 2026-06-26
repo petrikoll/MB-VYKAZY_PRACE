@@ -28,6 +28,7 @@ import {
   sumActivityHours,
 } from "./activityUtils.mjs";
 import { recalculateAllReportActivities } from "./reportRecalc.mjs";
+import heroImageUrl from "./assets/moravsky-beroun-banner.png";
 
 const TEMPLATE_FILE_URL = new URL("../data/ŠABLONA_Pracovní výkaz OPZ+.xlsx", import.meta.url).href;
 const DRAFT_STORAGE_KEY = "opz-sulkova-generator-draft-v1";
@@ -551,13 +552,20 @@ Výstup jen JSON pole objektů {desc, hours}.`;
   return (
     <div className="min-h-screen bg-[#4B5563] p-4 text-[14px] text-[#0F172A] md:p-6">
       <main className="mx-auto max-w-[1080px] overflow-hidden rounded-[10px] border border-[#CBD5E1] bg-white shadow-xl">
-        <header className="border-b border-[#CBD5E1] bg-[#1E3A8A] px-6 py-5 text-white">
+        <header
+          className="border-b border-[#CBD5E1] bg-[#1E3A8A] bg-cover bg-center px-6 py-4 text-white md:py-5"
+          style={{
+            backgroundImage: `linear-gradient(90deg, rgba(15, 23, 42, 0.92) 0%, rgba(30, 58, 138, 0.82) 48%, rgba(30, 58, 138, 0.22) 100%), url(${heroImageUrl})`,
+          }}
+        >
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div className="flex items-center gap-3">
-              <FileSpreadsheet size={30} />
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white/15 ring-1 ring-white/25">
+                <FileSpreadsheet size={28} />
+              </span>
               <div>
-                <h1 className="text-[18px] font-bold">Generátor výkazů OPZ+ - Moravský Beroun</h1>
-                <p className="text-[13px] text-blue-100">Export tří pracovních výkazů pro tři zaměstnance do XLSX ZIP.</p>
+                <h1 className="text-[18px] font-bold drop-shadow-sm">Generátor výkazů OPZ+ - Moravský Beroun</h1>
+                <p className="text-[13px] font-medium text-blue-50 drop-shadow-sm">Export tří pracovních výkazů pro tři zaměstnance do XLSX ZIP.</p>
               </div>
             </div>
           </div>
